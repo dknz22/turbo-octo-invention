@@ -1,0 +1,476 @@
+body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #1a1f2c, #0f1118); /* Градиентный фон */
+    background-repeat: no-repeat; /* Убираем повторение */
+    background-attachment: fixed; /* Фиксируем фон при прокрутке */
+    color: #d5d5dd; /* Updated text color */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: transparent; /* Убираем старый фон */
+    border-bottom: 1px solid #ffffff1a; /* Добавляем границу */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1001; /* Шапка находится выше меню */
+}
+
+.header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Add spacing between logo and search */
+}
+
+.header .logo img {
+    display: block;
+    height: 40px;
+    padding: 10px 0; /* Add padding to vertically center the logo */
+}
+
+.header .search {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.header .search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add spacing between icon and text */
+    background-color: #2e2e3880; /* Existing background color */
+    /* border-radius: 4px; */
+    height: 30px; /* Reduce height */
+    padding: 0 10px; /* Adjust padding to maintain width */
+    font-size: 0.75em; /* Reduce font size */
+    border: 1px solid #8b5cf633; /* Add border with specified color and width */
+    border-radius: calc(0.75rem - 2px); /* Add border-radius with calculation */
+}
+
+.header .search-container i {
+    position: static; /* Remove absolute positioning */
+    color: #d5d5dd; /* Ensure icon color matches body text color */
+    font-size: 0.75em; /* Reduce icon size */
+}
+
+.header .search-container input {
+    padding-left: 0; /* Remove extra padding */
+    flex: 1; /* Allow input to take remaining space */
+    font-size: 0.875em; /* Slightly reduce font size */
+    background-color: transparent; /* Match input background to container */
+    border: none;
+    outline: none;
+    /* border-radius: 4px; */
+    color: #d5d5dd; /* Match input text color to body text color */
+    height: 100%; /* Ensure input fills the container height */
+}
+
+.header .search-container input::placeholder {
+    color: #d5d5dd; /* Match placeholder text color to body text color */
+}
+
+.header .search input {
+    padding: 5px;
+    font-size: 1em;
+    border: none;
+    /* border-radius: 4px; */
+}
+
+.header .search i {
+    color: #d5d5dd;
+}
+
+.header .actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header .actions .notifications {
+    font-size: 1rem; /* Set icon size */
+    color: #9B87F5; /* Match icon color to login icon color */
+    cursor: pointer; /* Add pointer cursor */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.header .actions .notifications:hover {
+    color: #b3a7f5; /* Match hover color to login icon hover color */
+}
+
+.header .actions .login {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Add spacing between icon and text */
+    background-color: #2e2e3880; /* Match search container background color */
+    color: #9B87F5; /* Updated text and icon color */
+    padding: 8px 16px; /* Add padding for better appearance */
+    border-radius: calc(0.75rem - 2px); /* Add border-radius with calculation */
+    font-size: 0.875rem; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    text-decoration: none; /* Remove underline */
+    border: 1px solid #8b5cf633; /* Match search container border */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+.header .actions .login i {
+    font-size: 1rem; /* Adjust icon size */
+}
+
+.header .actions .login:hover {
+    background-color: #3a3a4d; /* Slightly darker background on hover */
+    color: #b3a7f5; /* Slightly lighter text and icon color on hover */
+}
+
+.header .actions .profile {
+    width: 40px; /* Set profile image size */
+    height: 40px; /* Set profile image size */
+    border-radius: 50%; /* Make the image circular */
+    overflow: hidden; /* Ensure the image fits within the circle */
+    border: 2px solid #8b5cf633; /* Add a border matching the design */
+    cursor: pointer; /* Add pointer cursor */
+    transition: border-color 0.3s ease; /* Smooth hover effect */
+}
+
+.header .actions .profile:hover {
+    border-color: #b3a7f5; /* Change border color on hover */
+}
+
+.header .actions .profile img {
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%; /* Ensure the image fills the container */
+    object-fit: cover; /* Maintain aspect ratio and cover the circle */
+}
+
+.notification-wrapper {
+    position: relative; /* Position for badge placement */
+}
+
+.notification-badge {
+    position: absolute;
+    top: -12px; /* Move badge higher */
+    right: -12px; /* Move badge further to the right */
+    background-color: #9B87F5; /* Badge background color */
+    color: #d5d5dd; /* Badge text color */
+    font-size: 0.75rem; /* Font size for the number */
+    font-weight: bold; /* Bold text */
+    width: 18px; /* Circle width */
+    height: 18px; /* Circle height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Make it circular */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column; /* Ensure children stack vertically */
+    width: 250px;
+    height: 100vh; /* Меню занимает всю высоту экрана */
+    background-color: transparent; /* Убираем старый фон */
+    border-right: 1px solid #ffffff1a; /* Добавляем границу */
+    color: white;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-top: 0; /* Убираем отступ, так как меню фиксировано */
+    overflow: hidden; /* Убираем стандартное колесо прокрутки */
+    position: fixed; /* Фиксированное позиционирование */
+    top: 0; /* Убираем отступ сверху */
+    left: 0; /* Привязываем к левой части экрана */
+    z-index: 1000; /* Меню находится под шапкой */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 60px; /* Отступ сверху равен высоте шапки */
+    overflow-y: auto; /* Включаем прокрутку только для списка меню */
+    scrollbar-width: none; /* Убираем стандартный скроллбар для Firefox */
+}
+
+.sidebar ul::-webkit-scrollbar {
+    display: none; /* Убираем стандартный скроллбар для WebKit */
+}
+
+.sidebar ul.custom-scroll {
+    position: relative;
+}
+
+.sidebar ul.custom-scroll::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px; /* Ширина кастомного скроллбара */
+    height: 100%;
+    background: linear-gradient(to bottom, #8b5cf6, #3a3a4d); /* Градиент для скроллбара */
+    border-radius: 4px; /* Скругленные углы */
+    opacity: 0.5; /* Прозрачность */
+    pointer-events: none; /* Скроллбар не мешает взаимодействию */
+}
+
+.sidebar ul:hover.custom-scroll::after {
+    opacity: 1; /* Увеличиваем видимость при наведении */
+}
+
+.sidebar ul li {
+    margin: 5px 0; /* Reduced margin */
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center; /* Выравнивание текста и иконок по вертикали */
+    justify-content: flex-start; /* Текст и иконка выровнены влево */
+    color: #d5d5dd; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-size: 0.875rem; /* Размер шрифта */
+    padding: 8px 12px; /* Отступы */
+    gap: 10px; /* Расстояние между иконкой и текстом */
+}
+
+.sidebar ul li a i:first-child {
+    margin-right: 10px; /* Отступ между основной иконкой и текстом */
+}
+
+.sidebar ul li a i {
+    color: #8b5cf6;
+    width: 24px; /* Set icon width */
+    height: 24px; /* Set icon height */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar ul li a:hover {
+    color: #8b5cf6; /* Change text color on hover */
+    background-color: #8b5cf61a; /* Slightly darker background color */
+    border-radius: 8px; /* Add border-radius for rounded corners */
+}
+
+.sidebar ul li a .dropdown-arrow {
+    margin-left: auto; /* Перемещаем стрелку вправо */
+    font-size: 0.75rem; /* Размер стрелки */
+    color: #d5d5dd; /* Цвет стрелки совпадает с иконками */
+    transition: transform 0.3s ease; /* Анимация поворота */
+}
+
+.sidebar ul li.dropdown.open .dropdown-arrow {
+    transform: rotate(90deg); /* Поворачиваем стрелку при раскрытии */
+}
+
+.sidebar ul li.dropdown {
+    position: relative; /* Для управления выпадающим меню */
+}
+
+.sidebar ul li .dropdown-menu {
+    display: none; /* Скрываем меню по умолчанию */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px; /* Отступ между пунктом и выпадающим меню */
+    margin-left: 20px; /* Смещение вправо от родительского элемента */
+    background-color: transparent; /* Убираем фон */
+    border: none; /* Убираем границу */
+}
+
+.sidebar ul li .dropdown-menu li {
+    padding: 4px 12px; /* Уменьшены отступы внутри пунктов */
+    display: flex; /* Для выравнивания иконок и текста */
+    align-items: center; /* Вертикальное выравнивание */
+    gap: 8px; /* Уменьшено расстояние между иконкой и текстом */
+}
+
+.sidebar ul li .dropdown-menu li a {
+    display: block; /* Ensure the link spans the full width */
+    width: 100%; /* Make the link take up the full width of the parent */
+    padding: 8px 12px; /* Adjust padding for better click area */
+    box-sizing: border-box; /* Include padding in width calculation */
+    color: #d5d5dd; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-size: 0.875rem; /* Размер шрифта совпадает с родительским */
+    display: flex; /* Для выравнивания иконок и текста */
+    align-items: center; /* Вертикальное выравнивание */
+} 
+
+.sidebar ul li .dropdown-menu li a i {
+    color: #8b5cf6; /* Цвет иконки совпадает с родительским */
+    width: 24px; /* Ширина иконки совпадает с родительской */
+    height: 24px; /* Высота иконки совпадает с родительской */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar ul li .dropdown-menu li a:hover {
+    color: #8b5cf6; /* Change text color on hover */
+    background-color: #8b5cf61a; /* Slightly darker background color */
+    border-radius: 8px; /* Add border-radius for rounded corners */
+}
+
+.sidebar ul li.dropdown.open .dropdown-menu {
+    display: block; /* Показываем меню при открытии */
+}
+
+.sidebar .footer {
+    margin-top: auto; /* Push footer to the bottom */
+    font-size: 12px; /* Set font size */
+    color: #d5d5dd; /* Set text color */
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of links */
+    gap: 10px; /* Add spacing between links */
+    padding-top: 15px; /* Add padding at the top */
+    border-top: 1px solid #ffffff1a; /* Add a top border */
+    overflow: visible; /* Футер не затрагивается прокруткой */
+}
+
+.sidebar .footer a {
+    color: #d5d5dd; /* Set link color */
+    text-decoration: none; /* Remove underline */
+    flex: 1 1 calc(33.33% - 10px); /* Ensure 3 links per row */
+    text-align: center; /* Center align the links */
+}
+
+.sidebar .footer a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.sidebar .copyright {
+    font-size: 12px; /* Match footer font size */
+    color: #d5d5dd; /* Match footer text color */
+    text-align: center; /* Center align the text */
+    margin-top: 10px; /* Add spacing above the copyright */
+    padding-top: 10px; /* Add padding above the text */
+    border-top: 1px solid #ffffff1a; /* Add a top border */
+}
+
+.content {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    margin-left: 250px; /* Offset for the sidebar width */
+    padding-top: 80px; /* Add spacing below the header */
+    text-align: center; /* Center align text */
+    font-size: 1.25rem; /* Slightly smaller font size for the subtitle */
+    color: #d5d5dd; /* Match the body text color */
+    margin-top: 60px; /* Отступ для учета фиксированной шапки */
+}
+
+.content h1 {
+    font-size: 2.5rem; /* Large font size for the title */
+    font-weight: bold; /* Bold text */
+    color: #8b5cf6; /* Match the theme color */
+    text-align: center; /* Center align the text */
+    margin-bottom: 10px; /* Add spacing below the title */
+}
+
+.content p {
+    font-size: 1.25rem; /* Slightly smaller font size for the subtitle */
+    color: #d5d5dd; /* Match the body text color */
+    text-align: center; /* Center align the text */
+    margin-bottom: 20px; /* Add spacing below the subtitle */
+}
+
+.glass {
+    border-width: 1px;
+    border-color: #ffffff1a;
+    background-color: #ffffff0d;
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    --tw-backdrop-blur: blur(12px);
+    -webkit-backdrop-filter: var(--tw-backdrop-blur);
+    backdrop-filter: var(--tw-backdrop-blur);
+}
+
+.hero-section {
+    margin-bottom: 20px; /* Add spacing below the hero section */
+}
+
+.cards-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Add spacing between cards */
+    margin-top: 20px; /* Add spacing above the cards */
+    width: 100%; /* Ensure the container spans the full width */
+    padding: 0 10px; /* Add padding for better appearance */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.card {
+    flex: 0 0 30%; /* Each card takes 30% of the available width */
+    background-color: #2e2e38; /* Card background color */
+    color: #d5d5dd; /* Card text color */
+    padding: 20px; /* Add padding inside the card */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center align text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Slightly lift the card on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.card-title {
+    display: flex; /* Align icon and text horizontally */
+    align-items: center; /* Vertically center the icon and text */
+    font-size: 1.25rem; /* Slightly larger font for the title */
+    font-weight: bold; /* Make the title bold */
+    color: #8b5cf6; /* Match the theme color */
+    margin-bottom: 10px; /* Add spacing below the title */
+}
+
+.card-title i {
+    margin-right: 10px; /* Add spacing between the icon and the text */
+    font-size: 1.5rem; /* Slightly larger icon size */
+}
+
+.card-description {
+    font-size: 1rem; /* Standard font size for the description */
+    color: #d5d5dd; /* Match the body text color */
+    margin-bottom: 10px; /* Add spacing below the description */
+}
+
+.card-text {
+    font-size: 0.875rem; /* Slightly smaller font size for the text */
+    color: #d5d5dd; /* Match the body text color */
+    line-height: 1.5; /* Improve readability with line height */
+    margin-top: 10px; /* Add spacing above the text */
+}
+
+.start-journey-btn {
+    display: inline-flex; /* Align icon and text horizontally */
+    align-items: center; /* Vertically center the icon and text */
+    gap: 10px; /* Add spacing between the icon and text */
+    background-color: #8b5cf6; /* Purple background color */
+    color: #ffffff; /* White text color */
+    font-size: 1rem; /* Standard font size */
+    font-weight: bold; /* Bold text */
+    padding: 12px 24px; /* Add padding for better appearance */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    margin-top: 20px; /* Add spacing above the button */
+}
+
+.start-journey-btn i {
+    font-size: 1.25rem; /* Slightly larger icon size */
+}
+
+.start-journey-btn:hover {
+    background-color: #7a4de0; /* Darker purple on hover */
+    transform: translateY(-3px); /* Slightly lift the button on hover */
+}
