@@ -9,21 +9,22 @@ body {
     color: #d5d5dd; /* Updated text color */
 }
 
+/* Оптимизация стилей для .header */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 60px;
-    background-color: transparent; /* Убираем старый фон */
-    border-bottom: 1px solid #ffffff1a; /* Добавляем границу */
+    background-color: transparent;
+    border-bottom: 1px solid #ffffff1a;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
     box-sizing: border-box;
-    z-index: 1001; /* Шапка находится выше меню */
+    z-index: 1001;
 }
 
 .header .logo {
@@ -31,64 +32,36 @@ body {
     font-weight: bold;
     display: flex;
     align-items: center;
-    gap: 15px; /* Add spacing between logo and search */
+    gap: 15px;
 }
 
 .header .logo img {
-    display: block;
     height: 40px;
-    padding: 10px 0; /* Add padding to vertically center the logo */
-}
-
-.header .search {
-    display: flex;
-    align-items: center;
-    gap: 5px;
 }
 
 .header .search-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* Add spacing between icon and text */
-    background-color: #2e2e3880; /* Existing background color */
-    /* border-radius: 4px; */
-    height: 30px; /* Reduce height */
-    padding: 0 10px; /* Adjust padding to maintain width */
-    font-size: 0.75em; /* Reduce font size */
-    border: 1px solid #8b5cf633; /* Add border with specified color and width */
-    border-radius: calc(0.75rem - 2px); /* Add border-radius with calculation */
+    gap: 10px;
+    background-color: #2e2e3880;
+    height: 30px;
+    padding: 0 10px;
+    font-size: 14px;
+    border: 1px solid #8b5cf633;
+    border-radius: calc(0.75rem - 2px);
 }
 
 .header .search-container i {
-    position: static; /* Remove absolute positioning */
-    color: #d5d5dd; /* Ensure icon color matches body text color */
-    font-size: 0.75em; /* Reduce icon size */
+    color: #bcbcc2;
+    font-size: 16px;
 }
 
 .header .search-container input {
-    padding-left: 0; /* Remove extra padding */
-    flex: 1; /* Allow input to take remaining space */
-    font-size: 0.875em; /* Slightly reduce font size */
-    background-color: transparent; /* Match input background to container */
+    flex: 1;
+    font-size: 0.875em;
+    background-color: transparent;
     border: none;
     outline: none;
-    /* border-radius: 4px; */
-    color: #d5d5dd; /* Match input text color to body text color */
-    height: 100%; /* Ensure input fills the container height */
-}
-
-.header .search-container input::placeholder {
-    color: #d5d5dd; /* Match placeholder text color to body text color */
-}
-
-.header .search input {
-    padding: 5px;
-    font-size: 1em;
-    border: none;
-    /* border-radius: 4px; */
-}
-
-.header .search i {
     color: #d5d5dd;
 }
 
@@ -99,58 +72,54 @@ body {
 }
 
 .header .actions .notifications {
-    font-size: 1rem; /* Set icon size */
-    color: #9B87F5; /* Match icon color to login icon color */
-    cursor: pointer; /* Add pointer cursor */
-    transition: color 0.3s ease; /* Smooth hover effect */
+    font-size: 1rem;
+    color: #9B87F5;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .header .actions .notifications:hover {
-    color: #b3a7f5; /* Match hover color to login icon hover color */
+    color: #b3a7f5;
 }
 
 .header .actions .login {
     display: flex;
     align-items: center;
-    gap: 8px; /* Add spacing between icon and text */
-    background-color: #2e2e3880; /* Match search container background color */
-    color: #9B87F5; /* Updated text and icon color */
-    padding: 8px 16px; /* Add padding for better appearance */
-    border-radius: calc(0.75rem - 2px); /* Add border-radius with calculation */
-    font-size: 0.875rem; /* Adjust font size */
-    font-weight: bold; /* Make text bold */
-    text-decoration: none; /* Remove underline */
-    border: 1px solid #8b5cf633; /* Match search container border */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
-}
-
-.header .actions .login i {
-    font-size: 1rem; /* Adjust icon size */
+    gap: 8px;
+    background-color: #2e2e3880;
+    color: #9B87F5;
+    padding: 8px 16px;
+    border-radius: calc(0.75rem - 2px);
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid #8b5cf633;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .header .actions .login:hover {
-    background-color: #3a3a4d; /* Slightly darker background on hover */
-    color: #b3a7f5; /* Slightly lighter text and icon color on hover */
+    background-color: #3a3a4d;
+    color: #b3a7f5;
 }
 
 .header .actions .profile {
-    width: 40px; /* Set profile image size */
-    height: 40px; /* Set profile image size */
-    border-radius: 50%; /* Make the image circular */
-    overflow: hidden; /* Ensure the image fits within the circle */
-    border: 2px solid #8b5cf633; /* Add a border matching the design */
-    cursor: pointer; /* Add pointer cursor */
-    transition: border-color 0.3s ease; /* Smooth hover effect */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #8b5cf633;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
 }
 
 .header .actions .profile:hover {
-    border-color: #b3a7f5; /* Change border color on hover */
+    border-color: #b3a7f5;
 }
 
 .header .actions .profile img {
-    width: 100%; /* Ensure the image fills the container */
-    height: 100%; /* Ensure the image fills the container */
-    object-fit: cover; /* Maintain aspect ratio and cover the circle */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .notification-wrapper {
@@ -174,30 +143,29 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
 }
 
+/* Оптимизация стилей для .sidebar */
 .sidebar {
     display: flex;
-    flex-direction: column; /* Ensure children stack vertically */
+    flex-direction: column;
     width: 250px;
-    height: 100vh; /* Меню занимает всю высоту экрана */
-    background-color: transparent; /* Убираем старый фон */
-    border-right: 1px solid #ffffff1a; /* Добавляем границу */
+    height: 100vh;
+    background-color: transparent;
+    border-right: 1px solid #ffffff1a;
     color: white;
     padding: 15px;
     box-sizing: border-box;
-    margin-top: 0; /* Убираем отступ, так как меню фиксировано */
-    overflow: hidden; /* Убираем стандартное колесо прокрутки */
-    position: fixed; /* Фиксированное позиционирование */
-    top: 0; /* Убираем отступ сверху */
-    left: 0; /* Привязываем к левой части экрана */
-    z-index: 1000; /* Меню находится под шапкой */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
 }
 
 .sidebar ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
-    margin: 0;
-    margin-top: 60px; /* Отступ сверху равен высоте шапки */
-    overflow-y: auto; /* Включаем прокрутку только для списка меню */
+    margin: 60px 0 0; /* Отступ сверху равен высоте шапки */
+    overflow-y: auto;
     scrollbar-width: none; /* Убираем стандартный скроллбар для Firefox */
 }
 
@@ -205,181 +173,102 @@ body {
     display: none; /* Убираем стандартный скроллбар для WebKit */
 }
 
-.sidebar ul.custom-scroll {
-    position: relative;
-}
-
-.sidebar ul.custom-scroll::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 8px; /* Ширина кастомного скроллбара */
-    height: 100%;
-    background: linear-gradient(to bottom, #8b5cf6, #3a3a4d); /* Градиент для скроллбара */
-    border-radius: 4px; /* Скругленные углы */
-    opacity: 0.5; /* Прозрачность */
-    pointer-events: none; /* Скроллбар не мешает взаимодействию */
-}
-
-.sidebar ul:hover.custom-scroll::after {
-    opacity: 1; /* Увеличиваем видимость при наведении */
-}
-
 .sidebar ul li {
-    margin: 5px 0; /* Reduced margin */
+    margin: 5px 0;
 }
 
 .sidebar ul li a {
     display: flex;
-    align-items: center; /* Выравнивание текста и иконок по вертикали */
-    justify-content: flex-start; /* Текст и иконка выровнены влево */
-    color: #d5d5dd; /* Цвет текста */
-    text-decoration: none; /* Убираем подчеркивание */
-    font-size: 0.875rem; /* Размер шрифта */
-    padding: 8px 12px; /* Отступы */
-    gap: 10px; /* Расстояние между иконкой и текстом */
-}
-
-.sidebar ul li a i:first-child {
-    margin-right: 10px; /* Отступ между основной иконкой и текстом */
+    align-items: center;
+    color: #d5d5dd;
+    text-decoration: none;
+    font-size: 0.875rem;
+    padding: 8px 12px;
+    gap: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sidebar ul li a i {
     color: #8b5cf6;
-    width: 24px; /* Set icon width */
-    height: 24px; /* Set icon height */
+    width: 12px;
+    height: 12px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
 }
 
 .sidebar ul li a:hover {
-    color: #8b5cf6; /* Change text color on hover */
-    background-color: #8b5cf61a; /* Slightly darker background color */
-    border-radius: 8px; /* Add border-radius for rounded corners */
-}
-
-.sidebar ul li a .dropdown-arrow {
-    margin-left: auto; /* Перемещаем стрелку вправо */
-    font-size: 0.75rem; /* Размер стрелки */
-    color: #d5d5dd; /* Цвет стрелки совпадает с иконками */
-    transition: transform 0.3s ease; /* Анимация поворота */
-}
-
-.sidebar ul li.dropdown.open .dropdown-arrow {
-    transform: rotate(90deg); /* Поворачиваем стрелку при раскрытии */
-}
-
-.sidebar ul li.dropdown {
-    position: relative; /* Для управления выпадающим меню */
+    color: #8b5cf6;
+    background-color: #8b5cf61a;
 }
 
 .sidebar ul li .dropdown-menu {
-    display: none; /* Скрываем меню по умолчанию */
+    display: none;
     list-style: none;
     padding: 0;
-    margin: 0;
-    margin-top: 5px; /* Отступ между пунктом и выпадающим меню */
-    margin-left: 20px; /* Смещение вправо от родительского элемента */
-    background-color: transparent; /* Убираем фон */
-    border: none; /* Убираем границу */
-}
-
-.sidebar ul li .dropdown-menu li {
-    padding: 4px 12px; /* Уменьшены отступы внутри пунктов */
-    display: flex; /* Для выравнивания иконок и текста */
-    align-items: center; /* Вертикальное выравнивание */
-    gap: 8px; /* Уменьшено расстояние между иконкой и текстом */
-}
-
-.sidebar ul li .dropdown-menu li a {
-    display: block; /* Ensure the link spans the full width */
-    width: 100%; /* Make the link take up the full width of the parent */
-    padding: 8px 12px; /* Adjust padding for better click area */
-    box-sizing: border-box; /* Include padding in width calculation */
-    color: #d5d5dd; /* Цвет текста */
-    text-decoration: none; /* Убираем подчеркивание */
-    font-size: 0.875rem; /* Размер шрифта совпадает с родительским */
-    display: flex; /* Для выравнивания иконок и текста */
-    align-items: center; /* Вертикальное выравнивание */
-} 
-
-.sidebar ul li .dropdown-menu li a i {
-    color: #8b5cf6; /* Цвет иконки совпадает с родительским */
-    width: 24px; /* Ширина иконки совпадает с родительской */
-    height: 24px; /* Высота иконки совпадает с родительской */
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.sidebar ul li .dropdown-menu li a:hover {
-    color: #8b5cf6; /* Change text color on hover */
-    background-color: #8b5cf61a; /* Slightly darker background color */
-    border-radius: 8px; /* Add border-radius for rounded corners */
+    margin: 5px 0 0 20px;
 }
 
 .sidebar ul li.dropdown.open .dropdown-menu {
-    display: block; /* Показываем меню при открытии */
+    display: block;
 }
 
 .sidebar .footer {
-    margin-top: auto; /* Push footer to the bottom */
-    font-size: 12px; /* Set font size */
-    color: #d5d5dd; /* Set text color */
+    margin-top: auto;
+    font-size: 12px;
+    color: #d5d5dd;
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping of links */
-    gap: 10px; /* Add spacing between links */
-    padding-top: 15px; /* Add padding at the top */
-    border-top: 1px solid #ffffff1a; /* Add a top border */
-    overflow: visible; /* Футер не затрагивается прокруткой */
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #ffffff1a;
 }
 
 .sidebar .footer a {
-    color: #d5d5dd; /* Set link color */
-    text-decoration: none; /* Remove underline */
-    flex: 1 1 calc(33.33% - 10px); /* Ensure 3 links per row */
-    text-align: center; /* Center align the links */
+    color: #d5d5dd;
+    text-decoration: none;
+    flex: 1 1 calc(33.33% - 10px);
+    text-align: center;
+    transition: text-decoration 0.3s ease;
 }
 
 .sidebar .footer a:hover {
-    text-decoration: underline; /* Add underline on hover */
+    text-decoration: underline;
 }
 
 .sidebar .copyright {
-    font-size: 12px; /* Match footer font size */
-    color: #d5d5dd; /* Match footer text color */
-    text-align: center; /* Center align the text */
-    margin-top: 10px; /* Add spacing above the copyright */
-    padding-top: 10px; /* Add padding above the text */
-    border-top: 1px solid #ffffff1a; /* Add a top border */
+    font-size: 12px;
+    color: #d5d5dd;
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ffffff1a;
 }
 
+/* Оптимизация стилей для .content */
 .content {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack children vertically */
-    margin-left: 250px; /* Offset for the sidebar width */
-    padding-top: 80px; /* Add spacing below the header */
-    text-align: center; /* Center align text */
-    font-size: 1.25rem; /* Slightly smaller font size for the subtitle */
-    color: #d5d5dd; /* Match the body text color */
-    margin-top: 60px; /* Отступ для учета фиксированной шапки */
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px; /* Учитываем ширину sidebar */
+    padding-top: 80px; /* Отступ для header */
+    text-align: center;
+    font-size: 1.25rem;
+    color: #d5d5dd;
+    margin-top: 60px; /* Учитываем фиксированную шапку */
 }
 
 .content h1 {
-    font-size: 2.5rem; /* Large font size for the title */
-    font-weight: bold; /* Bold text */
-    color: #8b5cf6; /* Match the theme color */
-    text-align: center; /* Center align the text */
-    margin-bottom: 10px; /* Add spacing below the title */
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #8b5cf6;
+    margin-bottom: 10px;
 }
 
 .content p {
-    font-size: 1.25rem; /* Slightly smaller font size for the subtitle */
-    color: #d5d5dd; /* Match the body text color */
-    text-align: center; /* Center align the text */
-    margin-bottom: 20px; /* Add spacing below the subtitle */
+    font-size: 1.25rem;
+    color: #d5d5dd;
+    margin-bottom: 20px;
 }
 
 .glass {
@@ -473,4 +362,87 @@ body {
 .start-journey-btn:hover {
     background-color: #7a4de0; /* Darker purple on hover */
     transform: translateY(-3px); /* Slightly lift the button on hover */
+}
+
+/* Force Feather Icons sizes globally */
+svg[data-feather] {
+    width: auto !important;
+    height: auto !important;
+}
+
+.sidebar ul li svg[data-feather] {
+    width: 12px !important;
+    height: 12px !important;
+    color: #8b5c18; /* Hex color for menu icons */
+}
+
+.search-container svg[data-feather="search"] {
+    width: 16px !important;
+    height: 16px !important;
+    color: #bcbcc2; /* Hex color for search icon */
+}
+
+/* Utility classes for icons */
+.icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #8b5cf6;
+    width: 16px;
+    height: 16px;
+}
+
+/* Shared button styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #8b5cf6;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #7a4de0;
+}
+
+/* Shared card styles */
+.card {
+    flex: 0 0 30%;
+    background-color: #2e2e38;
+    color: #d5d5dd;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #8b5cf6;
+    margin-bottom: 10px;
+}
+
+.card-title .icon {
+    margin-right: 10px;
+    font-size: 1.5rem;
 }
