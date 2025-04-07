@@ -80,6 +80,16 @@ document.addEventListener('DOMContentLoaded', () => {
         notificationPopup.style.display = isVisible ? 'none' : 'block';
     });
 
+    // Close the notification popup when clicking outside of it
+    document.addEventListener('click', (event) => {
+        const notificationWrapper = document.querySelector('.notification-wrapper');
+        const notificationPopup = document.querySelector('.notification-popup');
+
+        if (!notificationWrapper.contains(event.target)) {
+            notificationPopup.style.display = 'none';
+        }
+    });
+
     // Handle dropdown menus
     document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
         toggle.addEventListener('click', (event) => {
@@ -124,6 +134,93 @@ document.addEventListener('DOMContentLoaded', () => {
             menu.scrollTop += event.deltaY; // Manually control scrolling
         });
     }
+
+    // Add a profile popup element
+    const profileWrapper = document.querySelector('.profile');
+    const profilePopup = document.createElement('div');
+    profilePopup.classList.add('profile-popup');
+    profilePopup.innerHTML = `
+        <div class="profile-header">My Account</div>
+        <div class="profile-body">
+            <div class="profile-item">
+                <i class="icon icon-purple" data-feather="user"></i>
+                <span>View Profile</span>
+            </div>
+            <div class="profile-item">
+                <i class="icon icon-purple" data-feather="settings"></i>
+                <span>Profile Settings</span>
+            </div>
+            <div class="profile-item">
+                <i class="icon icon-purple" data-feather="log-out"></i>
+                <span>Logout</span>
+            </div>
+        </div>
+    `;
+    profileWrapper.appendChild(profilePopup);
+
+    // Add styles for the profile popup
+    const profileStyle = document.createElement('style');
+    profileStyle.textContent = `
+        .profile-popup {
+            position: absolute;
+            top: calc(100% + 10px); /* Positioned directly below the avatar with a small gap */
+            right: 10px; /* Adjusted to align slightly left under the avatar */
+            transform: none; /* Remove centering */
+            width: 200px;
+            background-color: #14141f;
+            color: #d5d5dd;
+            border: 1px solid #3a3a4a;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            display: none; /* Hidden by default */
+            z-index: 1002;
+        }
+
+        .profile-popup .profile-header {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #9b87f5; /* Updated color */
+            font-size: 14px; /* Updated font size */
+        }
+
+        .profile-popup .profile-body {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .profile-popup .profile-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .profile-popup .profile-item:hover {
+            background-color: #3a3a4d;
+        }
+
+        .profile-popup .profile-item span {
+            font-size: 14px; /* Updated font size for profile items */
+        }
+    `;
+    document.head.appendChild(profileStyle);
+
+    // Toggle the visibility of the profile popup
+    profileWrapper.addEventListener('click', (event) => {
+        event.stopPropagation(); // Prevent click from propagating to document
+        const isVisible = profilePopup.style.display === 'block';
+        profilePopup.style.display = isVisible ? 'none' : 'block';
+    });
+
+    // Close the profile popup when clicking outside of it
+    document.addEventListener('click', () => {
+        profilePopup.style.display = 'none';
+    });
 
     // Initialize Feather Icons
     feather.replace();
