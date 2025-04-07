@@ -8,7 +8,8 @@
     text-align: center;
     font-size: 1.25rem;
     color: #d5d5dd;
-    margin-top: 60px;
+    padding-left: 20px; /* Added padding for left spacing */
+    padding-right: 20px; /* Added padding for right spacing */
 }
 
 .content h1 {
@@ -22,6 +23,32 @@
     font-size: 1.25rem;
     color: #d5d5dd;
     margin-bottom: 20px;
+}
+
+/* Applied the .start-journey-btn styles to the button in the content */
+.content .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #8b5cf6;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 60px; /* Ensures consistent spacing */
+}
+
+.content .btn i {
+    font-size: 1.25rem;
+}
+
+.content .btn:hover {
+    background-color: #7a4de0;
+    transform: translateY(-3px);
 }
 
 .hero-section {
@@ -42,7 +69,8 @@
     background-color: #2e2e38;
     color: #d5d5dd;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
+    border: 1px solid #ffffff1a;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -56,85 +84,55 @@
 .card-title {
     display: flex;
     align-items: center;
-    font-size: 1.25rem;
+    color: #fafafa;
+    font-size: 24px;
     font-weight: bold;
-    color: #8b5cf6;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .card-title .icon {
     margin-right: 10px;
     font-size: 1.5rem;
+    color: #8b5cf6; /* Card icon color */
 }
 
+/* Adjusted styles for card descriptions to align them directly under the title */
 .card-description {
-    font-size: 1rem;
-    color: #d5d5dd;
+    color: #bcbcc2;
+    font-size: 14px;
+    margin-top: 0;
     margin-bottom: 10px;
+    text-align: left;
 }
 
+/* Updated styles for card text */
 .card-text {
-    font-size: 0.875rem;
-    color: #d5d5dd;
-    line-height: 1.5;
-    margin-top: 10px;
+    color: #bcbcc2;
+    font-size: 14px;
+    margin-top: 20px; /* Increased margin-top for more spacing */
+    text-align: left;
 }
 
-.start-journey-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #8b5cf6;
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 20px;
+/* Added styles for the glowing text effect */
+.text-glow {
+    text-shadow: 0 0 10px rgba(155, 135, 245, 0.5);
 }
 
-.start-journey-btn i {
-    font-size: 1.25rem;
+/* Added styles for cosmic purple light text */
+.text-cosmic-purple-light {
+    --tw-text-opacity: 1;
+    color: rgb(155 135 245 / var(--tw-text-opacity));
 }
 
-.start-journey-btn:hover {
-    background-color: #7a4de0;
-    transform: translateY(-3px);
+/* Added styles for bold text */
+.font-bold {
+    font-weight: 700;
 }
 
-/* Utility classes for icons */
-.icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    color: #8b5cf6;
-    width: 16px;
-    height: 16px;
+/* Styles for chevron rotation */
+.dropdown-toggle .icon {
+    transition: transform 0.3s ease;
 }
-
-/* Shared button styles */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 0.875rem;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.btn-primary {
-    background-color: #8b5cf6;
-    color: #ffffff;
-    border: none;
-}
-
-.btn-primary:hover {
-    background-color: #7a4de0;
+.dropdown.open .icon {
+    transform: rotate(90deg);
 }
