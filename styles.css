@@ -136,3 +136,21 @@
 .dropdown.open .icon {
     transform: rotate(90deg);
 }
+
+/* Mobile adaptation styles */
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+    }
+}

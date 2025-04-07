@@ -239,4 +239,12 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.style.width = parentStyle.width;
         icon.style.height = parentStyle.height;
     });
+
+    // Toggle the sidebar when the burger menu is clicked
+    const burgerMenu = document.querySelector('.burger-menu');
+    const sidebar = document.querySelector('.sidebar');
+
+    burgerMenu.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+    });
 });

@@ -328,3 +328,70 @@ body {
 .btn-primary:hover {
     background-color: #7a4de0;
 }
+
+/* Mobile adaptation styles */
+@media (max-width: 768px) {
+    .header {
+        height: 50px;
+        padding: 0 10px;
+    }
+
+    .header .logo {
+        font-size: 1.2em;
+    }
+
+    .header .actions {
+        gap: 10px;
+    }
+
+    .header .search-container {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+        color: #8b5cf6;
+    }
+
+    .burger-menu i {
+        font-size: 1.5rem;
+        color: #8b5cf6;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    /* Hide login text on mobile */
+    .header .actions .login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+        gap: 0;
+    }
+
+    .header .actions .login span {
+        display: none;
+    }
+}
+
+/* Hide burger menu in desktop view */
+@media (min-width: 769px) {
+    .burger-menu {
+        display: none;
+    }
+}
