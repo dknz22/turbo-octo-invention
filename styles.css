@@ -1,261 +1,14 @@
-body {
-    margin: 0;
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(to bottom, #1a1f2c, #0f1118); /* Градиентный фон */
-    background-repeat: no-repeat; /* Убираем повторение */
-    background-attachment: fixed; /* Фиксируем фон при прокрутке */
-    color: #d5d5dd; /* Updated text color */
-}
+/* Retained styles for other components */
 
-/* Оптимизация стилей для .header */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: transparent;
-    border-bottom: 1px solid #ffffff1a;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    box-sizing: border-box;
-    z-index: 1001;
-}
-
-.header .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.header .logo img {
-    height: 40px;
-}
-
-.header .search-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #2e2e3880;
-    height: 30px;
-    padding: 0 10px;
-    font-size: 14px;
-    border: 1px solid #8b5cf633;
-    border-radius: calc(0.75rem - 2px);
-}
-
-.header .search-container i {
-    color: #bcbcc2;
-    font-size: 16px;
-}
-
-.header .search-container input {
-    flex: 1;
-    font-size: 0.875em;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: #d5d5dd;
-}
-
-.header .actions {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.header .actions .notifications {
-    font-size: 1rem;
-    color: #9B87F5;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.header .actions .notifications:hover {
-    color: #b3a7f5;
-}
-
-.header .actions .login {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #2e2e3880;
-    color: #9B87F5;
-    padding: 8px 16px;
-    border-radius: calc(0.75rem - 2px);
-    font-size: 0.875rem;
-    font-weight: bold;
-    text-decoration: none;
-    border: 1px solid #8b5cf633;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.header .actions .login:hover {
-    background-color: #3a3a4d;
-    color: #b3a7f5;
-}
-
-.header .actions .profile {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid #8b5cf633;
-    cursor: pointer;
-    transition: border-color 0.3s ease;
-}
-
-.header .actions .profile:hover {
-    border-color: #b3a7f5;
-}
-
-.header .actions .profile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.notification-wrapper {
-    position: relative; /* Position for badge placement */
-}
-
-.notification-badge {
-    position: absolute;
-    top: -12px; /* Move badge higher */
-    right: -12px; /* Move badge further to the right */
-    background-color: #9B87F5; /* Badge background color */
-    color: #d5d5dd; /* Badge text color */
-    font-size: 0.75rem; /* Font size for the number */
-    font-weight: bold; /* Bold text */
-    width: 18px; /* Circle width */
-    height: 18px; /* Circle height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%; /* Make it circular */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
-}
-
-/* Оптимизация стилей для .sidebar */
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    height: 100vh;
-    background-color: transparent;
-    border-right: 1px solid #ffffff1a;
-    color: white;
-    padding: 15px;
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    overflow: hidden;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 60px 0 0; /* Отступ сверху равен высоте шапки */
-    overflow-y: auto;
-    scrollbar-width: none; /* Убираем стандартный скроллбар для Firefox */
-}
-
-.sidebar ul::-webkit-scrollbar {
-    display: none; /* Убираем стандартный скроллбар для WebKit */
-}
-
-.sidebar ul li {
-    margin: 5px 0;
-}
-
-.sidebar ul li a {
-    display: flex;
-    align-items: center;
-    color: #d5d5dd;
-    text-decoration: none;
-    font-size: 0.875rem;
-    padding: 8px 12px;
-    gap: 10px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.sidebar ul li a i {
-    color: #8b5cf6;
-    width: 12px;
-    height: 12px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.sidebar ul li a:hover {
-    color: #8b5cf6;
-    background-color: #8b5cf61a;
-}
-
-.sidebar ul li .dropdown-menu {
-    display: none;
-    list-style: none;
-    padding: 0;
-    margin: 5px 0 0 20px;
-}
-
-.sidebar ul li.dropdown.open .dropdown-menu {
-    display: block;
-}
-
-.sidebar .footer {
-    margin-top: auto;
-    font-size: 12px;
-    color: #d5d5dd;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding-top: 15px;
-    border-top: 1px solid #ffffff1a;
-}
-
-.sidebar .footer a {
-    color: #d5d5dd;
-    text-decoration: none;
-    flex: 1 1 calc(33.33% - 10px);
-    text-align: center;
-    transition: text-decoration 0.3s ease;
-}
-
-.sidebar .footer a:hover {
-    text-decoration: underline;
-}
-
-.sidebar .copyright {
-    font-size: 12px;
-    color: #d5d5dd;
-    text-align: center;
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid #ffffff1a;
-}
-
-/* Оптимизация стилей для .content */
 .content {
     display: flex;
     flex-direction: column;
-    margin-left: 250px; /* Учитываем ширину sidebar */
-    padding-top: 80px; /* Отступ для header */
+    margin-left: 250px;
+    padding-top: 80px;
     text-align: center;
     font-size: 1.25rem;
     color: #d5d5dd;
-    margin-top: 60px; /* Учитываем фиксированную шапку */
+    margin-top: 60px;
 }
 
 .content h1 {
@@ -271,115 +24,85 @@ body {
     margin-bottom: 20px;
 }
 
-.glass {
-    border-width: 1px;
-    border-color: #ffffff1a;
-    background-color: #ffffff0d;
-    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);
-    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-    --tw-backdrop-blur: blur(12px);
-    -webkit-backdrop-filter: var(--tw-backdrop-blur);
-    backdrop-filter: var(--tw-backdrop-blur);
-}
-
 .hero-section {
-    margin-bottom: 20px; /* Add spacing below the hero section */
+    margin-bottom: 20px;
 }
 
 .cards-container {
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Add spacing between cards */
-    margin-top: 20px; /* Add spacing above the cards */
-    width: 100%; /* Ensure the container spans the full width */
-    padding: 0 10px; /* Add padding for better appearance */
-    box-sizing: border-box; /* Include padding in width calculation */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .card {
-    flex: 0 0 30%; /* Each card takes 30% of the available width */
-    background-color: #2e2e38; /* Card background color */
-    color: #d5d5dd; /* Card text color */
-    padding: 20px; /* Add padding inside the card */
-    border-radius: 8px; /* Rounded corners */
-    text-align: center; /* Center align text */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    flex: 0 0 30%;
+    background-color: #2e2e38;
+    color: #d5d5dd;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Slightly lift the card on hover */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 .card-title {
-    display: flex; /* Align icon and text horizontally */
-    align-items: center; /* Vertically center the icon and text */
-    font-size: 1.25rem; /* Slightly larger font for the title */
-    font-weight: bold; /* Make the title bold */
-    color: #8b5cf6; /* Match the theme color */
-    margin-bottom: 10px; /* Add spacing below the title */
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #8b5cf6;
+    margin-bottom: 10px;
 }
 
-.card-title i {
-    margin-right: 10px; /* Add spacing between the icon and the text */
-    font-size: 1.5rem; /* Slightly larger icon size */
+.card-title .icon {
+    margin-right: 10px;
+    font-size: 1.5rem;
 }
 
 .card-description {
-    font-size: 1rem; /* Standard font size for the description */
-    color: #d5d5dd; /* Match the body text color */
-    margin-bottom: 10px; /* Add spacing below the description */
+    font-size: 1rem;
+    color: #d5d5dd;
+    margin-bottom: 10px;
 }
 
 .card-text {
-    font-size: 0.875rem; /* Slightly smaller font size for the text */
-    color: #d5d5dd; /* Match the body text color */
-    line-height: 1.5; /* Improve readability with line height */
-    margin-top: 10px; /* Add spacing above the text */
+    font-size: 0.875rem;
+    color: #d5d5dd;
+    line-height: 1.5;
+    margin-top: 10px;
 }
 
 .start-journey-btn {
-    display: inline-flex; /* Align icon and text horizontally */
-    align-items: center; /* Vertically center the icon and text */
-    gap: 10px; /* Add spacing between the icon and text */
-    background-color: #8b5cf6; /* Purple background color */
-    color: #ffffff; /* White text color */
-    font-size: 1rem; /* Standard font size */
-    font-weight: bold; /* Bold text */
-    padding: 12px 24px; /* Add padding for better appearance */
-    border: none; /* Remove default border */
-    border-radius: 8px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
-    margin-top: 20px; /* Add spacing above the button */
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #8b5cf6;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
 }
 
 .start-journey-btn i {
-    font-size: 1.25rem; /* Slightly larger icon size */
+    font-size: 1.25rem;
 }
 
 .start-journey-btn:hover {
-    background-color: #7a4de0; /* Darker purple on hover */
-    transform: translateY(-3px); /* Slightly lift the button on hover */
-}
-
-/* Force Feather Icons sizes globally */
-svg[data-feather] {
-    width: auto !important;
-    height: auto !important;
-}
-
-.sidebar ul li svg[data-feather] {
-    width: 12px !important;
-    height: 12px !important;
-    color: #8b5c18; /* Hex color for menu icons */
-}
-
-.search-container svg[data-feather="search"] {
-    width: 16px !important;
-    height: 16px !important;
-    color: #bcbcc2; /* Hex color for search icon */
+    background-color: #7a4de0;
+    transform: translateY(-3px);
 }
 
 /* Utility classes for icons */
@@ -414,35 +137,4 @@ svg[data-feather] {
 
 .btn-primary:hover {
     background-color: #7a4de0;
-}
-
-/* Shared card styles */
-.card {
-    flex: 0 0 30%;
-    background-color: #2e2e38;
-    color: #d5d5dd;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-.card-title {
-    display: flex;
-    align-items: center;
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #8b5cf6;
-    margin-bottom: 10px;
-}
-
-.card-title .icon {
-    margin-right: 10px;
-    font-size: 1.5rem;
 }
