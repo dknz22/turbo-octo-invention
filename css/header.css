@@ -387,6 +387,10 @@ body {
     .header .actions .login span {
         display: none;
     }
+
+    .notification-popup {
+        width: 250px;
+    }
 }
 
 /* Hide burger menu in desktop view */

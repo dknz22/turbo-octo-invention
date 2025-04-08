@@ -1,0 +1,305 @@
+/* Retained styles for other components */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px;
+    padding-top: 80px;
+    text-align: center;
+    font-size: 1.25rem;
+    color: #d5d5dd;
+    padding-left: 125px; /* Increased left padding */
+    padding-right: 125px; /* Increased right padding */
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #8b5cf6;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 1.25rem;
+    color: #d5d5dd;
+    margin-bottom: 20px;
+}
+
+/* Applied the .start-journey-btn styles to the button in the content */
+.content .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #8b5cf6;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 60px; /* Ensures consistent spacing */
+}
+
+.content .btn i {
+    font-size: 1.25rem;
+}
+
+.content .btn:hover {
+    background-color: #7a4de0;
+    transform: translateY(-3px);
+}
+
+.hero-section {
+    margin-bottom: 20px;
+}
+
+/* Adjusted styles for small square cards container */
+.cards-container {
+    display: flex;
+    justify-content: center; /* Center the cards */
+    gap: 24px; /* Add 24px padding between each card */
+    flex-wrap: wrap; /* Ensure cards wrap to the next line if needed */
+    margin-top: 20px;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.card {
+    flex: 0 0 30%;
+    background-color: #2e2e38;
+    color: #d5d5dd;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #ffffff1a;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    color: #fafafa;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-title .icon {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #8b5cf6; /* Card icon color */
+}
+
+/* Adjusted styles for card descriptions to align them directly under the title */
+.card-description {
+    color: #bcbcc2;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Updated styles for card text */
+.card-text {
+    color: #bcbcc2;
+    font-size: 14px;
+    margin-top: 20px; /* Increased margin-top for more spacing */
+    text-align: left;
+}
+
+/* Added styles for the glowing text effect */
+.text-glow {
+    text-shadow: 0 0 10px rgba(155, 135, 245, 0.5);
+}
+
+/* Added styles for cosmic purple light text */
+.text-cosmic-purple-light {
+    --tw-text-opacity: 1;
+    color: rgb(155 135 245 / var(--tw-text-opacity));
+}
+
+/* Added styles for bold text */
+.font-bold {
+    font-weight: 700;
+}
+
+/* Styles for chevron rotation */
+.dropdown-toggle .icon {
+    transition: transform 0.3s ease;
+}
+.dropdown.open .icon {
+    transform: rotate(90deg);
+}
+
+/* Styles for square cards */
+.square-card {
+    flex: 0 0 calc(25% - 10px); /* Four cards in a row with spacing */
+    aspect-ratio: 1 / 1; /* Ensures the card is square */
+    background-color: #2e2e38;
+    color: #d5d5dd;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #ffffff1a;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.square-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.square-card-title {
+    color: #fafafa;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.square-card-description {
+    color: #bcbcc2;
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Styles for small square cards */
+.small-square-card {
+    width: 300px; /* Fixed width */
+    height: 200px; /* Fixed height */
+    background-color: #2e2e38;
+    color: #d5d5dd;
+    padding: 10px; /* Reduced padding for smaller size */
+    border-radius: 8px; /* Smaller border radius */
+    border: 1px solid #ffffff1a;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.small-square-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.small-square-card-title {
+    color: #fafafa;
+    font-size: 1rem; /* Smaller font size */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.small-square-card-description {
+    color: #bcbcc2;
+    font-size: 0.875rem; /* Smaller font size */
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* Styles for the Explore section */
+.explore {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding: 20px;
+    gap: 24px;
+}
+
+.explore-left {
+    flex: 1;
+    text-align: left;
+}
+
+.explore-left h2 {
+    font-size: 2rem;
+    color: #8b5cf6;
+    margin-bottom: 10px;
+}
+
+.explore-left p {
+    font-size: 1.25rem;
+    color: #d5d5dd;
+    margin-bottom: 20px;
+}
+
+.explore-left .btn {
+    background-color: #8b5cf6;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.explore-left .btn:hover {
+    background-color: #7a4de0;
+    transform: translateY(-3px);
+}
+
+.explore-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.demo-card {
+    width: 400px;
+    height: 300px;
+    background-color: #2e2e38;
+    color: #d5d5dd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: 1px solid #ffffff1a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.demo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fafafa;
+}
+
+/* Mobile adaptation styles */
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+    }
+
+    .square-card {
+        flex: 0 0 100%; /* Full width for mobile */
+        margin-bottom: 20px;
+    }
+
+    .small-square-card {
+        flex: 0 0 100%; /* Full width for mobile */
+        margin-bottom: 10px;
+    }
+}
